@@ -2,10 +2,10 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="PyMAF-X: Towards Well-aligned Full-body Model Regression from Monocular Images">
-  <meta name="keywords" content="PyMAF-X, Human Pose and Shape, Pyramidal Mesh Alignment Feedback Loop, SMPL, SMPL-X">
+  <meta name="description" content="4DHands: Reconstructing Interactive Hands in 4D with Transformers">
+  <meta name="keywords" content="MANO, Hand Pose and Shape">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PyMAF-X: Towards Well-aligned Full-body Model Regression from Monocular Images</title>
+  <title>4DHands: Reconstructing Interactive Hands in 4D with Transformers</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -25,42 +25,6 @@
 </head>
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <!-- <a class="navbar-item" href="https://hongwenzhang.github.io">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a> -->
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          Related Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hongwenzhang.github.io/DensePose2SMPL">
-            [TPAMI20] DaNet (DensePose to SMPL)
-          </a>
-          <a class="navbar-item" href="https://hongwenzhang.github.io/pymaf">
-            [ICCV21] PyMAF (Well-aligned Human Mesh Recovery)
-          </a>
-          <a class="navbar-item" href="https://github.com/tinatiansjz/hmr-survey">
-            Survey on Human Mesh Recovery
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</nav>
 
 <style>
 * {box-sizing: border-box;}
@@ -133,12 +97,12 @@ img {vertical-align: middle;}
     <div class="container">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">PyMAF-X: Towards Well-aligned Full-body Model Regression from Monocular Images</h1>
+          <h1 class="title is-1 publication-title">4DHands: Reconstructing Interactive Hands in 4D with Transformers</h1>
           <!-- <div class="is-size-3 publication-authors">
                 <span class="author-block">PyMAF-X: the eXpressive version of PyMAF</span>
           </div> -->
 
-          <div class="is-size-5 publication-authors">
+          <!--<div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://hongwenzhang.github.io" target="_blank">Hongwen Zhang</a><sup>1</sup>,</span>
             <span class="author-block">
@@ -152,7 +116,7 @@ img {vertical-align: middle;}
             <span class="author-block">
               <a href="http://www.cbsr.ia.ac.cn/users/znsun" target="_blank">Zhenan Sun</a><sup>3</sup>,</span>
             <span class="author-block">
-              <a href="https://www.liuyebin.com" target="_blank">Yebin Liu</a><sup>1</sup></span>            
+              <a href="https://www.liuyebin.com" target="_blank">Yebin Liu</a><sup>1</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
@@ -163,51 +127,9 @@ img {vertical-align: middle;}
 
           <div class="is-size-2 publication">
                 <span class="author-block">TPAMI 2023</span>
-          </div>
+          </div>-->
 
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-<!--               <span class="link-block">
-                <a href=""
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span> -->
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2207.06400"
-                   class="external-link button is-normal is-rounded is-dark" target="_blank">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <!-- <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=yqEmznSKjYI"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Presentation</span>
-                </a>
-              </span> -->
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/HongwenZhang/PyMAF-X"
-                   class="external-link button is-normal is-rounded is-dark" target="_blank">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
-            </div>
-          </div>
+
 
           <!-- <div class="is-size-3 publication-authors">
                 <span class="author-block">An eXpressive version of <a href="https://hongwenzhang.github.io/pymaf" target="_blank">PyMAF</a></span>
@@ -219,252 +141,79 @@ img {vertical-align: middle;}
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="hero-body">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-8">
-        
-        <!-- Slideshow container -->
-        <div class="slideshow-container">
-
-        <div class="mySlides fade">
-          <!-- <div class="numbertext">1 / 3</div> -->
-          <img src="files/img/1.png" style="width:100%">
-          <div class="text">1 / 20</div>
-        </div>
-
-        <div class="mySlides fade">
-          <!-- <div class="numbertext">2 / 3</div> -->
-          <img src="files/img/2.png" style="width:100%">
-          <div class="text">2 / 20</div>
-        </div>
-
-        <div class="mySlides fade">
-          <!-- <div class="numbertext"></div> -->
-          <img src="files/img/3.png" style="width:100%">
-          <div class="text">3 / 20</div>
-        </div>
-
-        <div class="mySlides fade">
-          <!-- <div class="numbertext">1 / 3</div> -->
-          <img src="files/img/4.png" style="width:100%">
-          <div class="text">4 / 20</div>
-        </div>
-
-        <div class="mySlides fade">
-          <!-- <div class="numbertext">2 / 3</div> -->
-          <img src="files/img/5.png" style="width:100%">
-          <div class="text">5 / 20</div>
-        </div>
-
-        <div class="mySlides fade">
-          <!-- <div class="numbertext"></div> -->
-          <img src="files/img/6.png" style="width:100%">
-          <div class="text">6 / 20</div>
-        </div>
-
-        <div class="mySlides fade">
-          <!-- <div class="numbertext">1 / 3</div> -->
-          <img src="files/img/7.png" style="width:100%">
-          <div class="text">7 / 20</div>
-        </div>
-
-        <div class="mySlides fade">
-          <!-- <div class="numbertext">2 / 3</div> -->
-          <img src="files/img/8.png" style="width:100%">
-          <div class="text">8 / 20</div>
-        </div>
-
-        <div class="mySlides fade">
-          <!-- <div class="numbertext"></div> -->
-          <img src="files/img/9.png" style="width:100%">
-          <div class="text">9 / 20</div>
-        </div>
-
-        <div class="mySlides fade">
-          <!-- <div class="numbertext"></div> -->
-          <img src="files/img/10.png" style="width:100%">
-          <div class="text">10 / 20</div>
-        </div>
-
-        <div class="mySlides fade">
-          <!-- <div class="numbertext"></div> -->
-          <img src="files/img/11.png" style="width:100%">
-          <div class="text">11 / 20</div>
-        </div>
-
-        <div class="mySlides fade">
-          <!-- <div class="numbertext"></div> -->
-          <img src="files/img/12.png" style="width:100%">
-          <div class="text">12 / 20</div>
-        </div>
-
-        <div class="mySlides fade">
-          <!-- <div class="numbertext"></div> -->
-          <img src="files/img/13.png" style="width:100%">
-          <div class="text">13 / 20</div>
-        </div>
-
-        <div class="mySlides fade">
-          <!-- <div class="numbertext"></div> -->
-          <img src="files/img/14.png" style="width:100%">
-          <div class="text">14 / 20</div>
-        </div>
-
-        <div class="mySlides fade">
-          <!-- <div class="numbertext"></div> -->
-          <img src="files/img/15.png" style="width:100%">
-          <div class="text">15 / 20</div>
-        </div>
-
-        <div class="mySlides fade">
-          <!-- <div class="numbertext"></div> -->
-          <img src="files/img/16.png" style="width:100%">
-          <div class="text">16 / 20</div>
-        </div>
-
-        <div class="mySlides fade">
-          <!-- <div class="numbertext"></div> -->
-          <img src="files/img/17.png" style="width:100%">
-          <div class="text">17 / 20</div>
-        </div>
-
-        <div class="mySlides fade">
-          <!-- <div class="numbertext"></div> -->
-          <img src="files/img/18.png" style="width:100%">
-          <div class="text">18 / 20</div>
-        </div>
-
-        </div>
-        <br>
-
-        <div style="text-align:center">
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span>
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-        </div>
-
-        <script>
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-          let i;
-          let slides = document.getElementsByClassName("mySlides");
-          let dots = document.getElementsByClassName("dot");
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-          }
-          slideIndex++;
-          if (slideIndex > slides.length) {slideIndex = 1}    
-          for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-          }
-          slides[slideIndex-1].style.display = "block";  
-          dots[slideIndex-1].className += " active";
-          setTimeout(showSlides, 2000); // Change image every 2 seconds
-        }
-        </script>
-
-        <h2 class="subtitle has-text-centered">
-          Reconstruction results of PyMAF-X on the COCO validation set
-        </h2>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="section">
-  <div class="container">
 
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-two-thirds">
-        <h2 class="title is-2">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            We present PyMAF-X, a regression-based approach to recovering parametric full-body models from monocular images. This task is very challenging since minor parametric deviation may lead to noticeable misalignment between the estimated mesh and the input image. Moreover, when integrating part-specific estimations into the full-body model, existing solutions tend to either degrade the alignment or produce unnatural wrist poses. To address these issues, we propose a Pyramidal Mesh Alignment Feedback (PyMAF) loop in our regression network for well-aligned human mesh recovery and extend it as PyMAF-X for the recovery of expressive full-body models. The core idea of PyMAF is to leverage a feature pyramid and rectify the predicted parameters explicitly based on the mesh-image alignment status. Specifically, given the currently predicted parameters, mesh-aligned evidence will be extracted from finer-resolution features accordingly and fed back for parameter rectification. To enhance the alignment perception, an auxiliary dense supervision is employed to provide mesh-image correspondence guidance while spatial alignment attention is introduced to enable the awareness of the global contexts for our network. When extending PyMAF for full-body mesh recovery, an adaptive integration strategy is proposed in PyMAF-X to produce natural wrist poses while maintaining the well-aligned performance of the part-specific estimations. The efficacy of our approach is validated on several benchmark datasets for body, hand, face, and full-body mesh recovery, where PyMAF and PyMAF-X effectively improve the mesh-image alignment and achieve new state-of-the-art results.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
   <!--/ Abstract. -->
   <p></p>
   <!-- Paper video. -->
   <div class="columns is-centered has-text-centered">
     <div class="column is-two-thirds">
       <h2 class="title is-2">Videos</h2>
-        <h3 align="center" class="title is-4">Demo (Frame by frame reconstruction. No post-processing.)</h3>
+
           <!-- <div>
             <video width=80% src="files/pymaf_ballet_compressed.mp4" type="video/mp4" autoplay muted loop/>
           </div> -->
           <div class="content has-text-centered">
-            <video 
-                  id="replay-video"
+            <video
+                  id="replay-video1"
                   controls
                   muted
                   width="80%">
-              <source src="files/pymaf_ballet_compressed.mp4"
+              <source src="files/multi_view_crop.mp4"
                       type="video/mp4">
             </video>
-            <h5 align="center" class="title is-6">Video trimmed from <a href="https://www.youtube.com/watch?v=Ltt4dkRkSG0" target="_blank"><i>here</i></a></h5>
-          </div>          
 
+          </div>
 
-          <!-- <div>
-            <video width=80% src="files/pymaf_han_compressed.mp4" type="video/mp4" autoplay muted loop/>
-          </div> -->
           <div class="content has-text-centered">
             <video 
-                  id="replay-video"
+                  id="replay-video2"
                   controls
                   muted
                   width="80%">
-              <source src="files/pymaf_han_compressed.mp4"
+              <source src="files/clip1.mp4"
                       type="video/mp4">
             </video>
-            <h5 align="center" class="title is-6">Video trimmed from <a href="https://github.com/facebookresearch/frankmocap" target="_blank"><i>here</i></a></h5>
+            
           </div>
-          
-          
-          <h3 align="center" style="margin-top:40px;"  class="title is-4">Comparison with the state of the art</h3>
-            <div class="content has-text-centered">
-              <video 
-                    id="replay-video"
-                    controls
-                    muted
-                    width="90%">
-                <source src="files/ballet_comparison_compressed.mp4"
-                        type="video/mp4">
-              </video>
-            </div>
 
-            <div class="content has-text-centered">
-              <video 
-                    id="replay-video"
-                    controls
-                    muted
-                    width="90%">
-                <source src="files/han_comparison_compressed.mp4"
-                        type="video/mp4">
-              </video>
-            </div>
+          <div class="content has-text-centered">
+            <video
+                  id="replay-video3"
+                  controls
+                  muted
+                  width="80%">
+              <source src="files/clip2.mp4"
+                      type="video/mp4">
+            </video>
+
+          </div>
+
+          <div class="content has-text-centered">
+            <video
+                  id="replay-video4"
+                  controls
+                  muted
+                  width="80%">
+              <source src="files/clip3.mp4"
+                      type="video/mp4">
+            </video>
+
+          </div>
+
+          <div class="content has-text-centered">
+            <video
+                  id="replay-video5"
+                  controls
+                  muted
+                  width="80%">
+              <source src="files/clip4.mp4"
+                      type="video/mp4">
+            </video>
+
+          </div>
+
         <!-- <h3 align="center" style="margin-top:40px;"  class="title is-4">Ours vs. SPIN vs. VIBE </h3>
           <div>
             <video width=90% src="https://hongwenzhang.github.io/pymaf/files/fencing.mp4" type="video/mp4" muted loop/>
@@ -475,77 +224,62 @@ img {vertical-align: middle;}
                 frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div> -->
 
-      <h3 align="center" style="margin-top:40px;"  class="title is-4">Face-only Reconstruction <br> More Comparisons on <a href="https://now.is.tue.mpg.de/nonmetricalevaluation.html" target="_blank">the NoW benchmark</a></h3>
-        <div class="content has-text-centered">
-          <img width=90% src="files/face-only.png" class="center">
-        </div>
 
     </div>
   </div>
-  
+
+
+<section class="section">
+
+  <!--/ Abstract. -->
+  <p></p>
+  <!-- Paper video. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-two-thirds">
+      <h2 class="title is-2">Comparison With SOTA</h2>
+
+          <!-- <div>
+            <video width=80% src="files/pymaf_ballet_compressed.mp4" type="video/mp4" autoplay muted loop/>
+          </div> -->
+          <div class="content has-text-centered">
+            <img src="files/img/res_1.jpg"  style="display: block; margin: auto;"/>
+          </div>
+          <div class="content has-text-centered">
+            <img src="files/img/res_2.jpg"  style="display: block; margin: auto;"/>
+          </div>
+          <div class="content has-text-centered">
+            <img src="files/img/res_3.jpg"  style="display: block; margin: auto;"/>
+          </div>
+    </div>
+  </div>
+
+  <!--/ Paper video. -->
+</section>
+<section class="section">
+
+  <!--/ Abstract. -->
+  <p></p>
+  <!-- Paper video. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-two-thirds">
+      <h2 class="title is-2">Realistic Views</h2>
+
+
+          <div class="content has-text-centered">
+            <img src="files/img/multi_1.jpg" style="display: block; margin: auto;"/>
+          </div>
+          <div class="content has-text-centered">
+            <img src="files/img/multi_2.jpg" style="display: block; margin: auto;"/>
+          </div>
+          <div class="content has-text-centered">
+            <img src="files/img/multi_3.jpg" style="display: block; margin: auto;"/>
+          </div>
+    </div>
+  </div>
 
   <!--/ Paper video. -->
 </section>
 
-<section class="section" id="BibTeX">
-  <div class="container content">
-    <h2 class="title">References</h2>
-
-[SMPL-X] G. Pavlakos, V. Choutas, N. Ghorbani, T. Bolkart, A. A. Osman, D. Tzionas, and M. J. Black, Expressive Body Capture: 3D Hands, Face, and Body from a Single Image, in CVPR 2019 <br />
-
-[ExPose] V. Choutas, G. Pavlakos, T. Bolkart, D. Tzionas, and M. J. Black, Monocular Expressive Body Regression through Body-driven Attention, in ECCV 2020 <br />
-
-[FrankMocap] Y. Rong, T. Shiratori, and H. Joo, FrankMocap: A monocular 3D whole-body pose estimation system via regression and integration, in ICCVW, 2021 <br />
-
-[PIXIE] Y. Feng, V. Choutas, T. Bolkart, D. Tzionas, and M. J. Black, “Collaborative regression of expressive bodies using moderation,” in 3DV, 2021 <br />
-
-[Hand4Whole] G. Moon, H. Choi, and K. M. Lee, Accurate 3D Hand Pose Estimation for Whole-body 3D Human Mesh Estimation, in CVPRW, 2022 <br />
-
-  </div>
-</section>
-
-
-<section class="section" id="BibTeX">
-  <div class="container content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>
-@article{pymafx2023,
-  title={PyMAF-X: Towards Well-aligned Full-body Model Regression from Monocular Images},
-  author={Zhang, Hongwen and Tian, Yating and Zhang, Yuxiang and Li, Mengcheng and An, Liang and Sun, Zhenan and Liu, Yebin},
-  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  year={2023}
-}
-
-@inproceedings{pymaf2021,
-  title={PyMAF: 3D Human Pose and Shape Regression with Pyramidal Mesh Alignment Feedback Loop},
-  author={Zhang, Hongwen and Tian, Yating and Zhou, Xinchi and Ouyang, Wanli and Liu, Yebin and Wang, Limin and Sun, Zhenan},
-  booktitle={Proceedings of the IEEE International Conference on Computer Vision},
-  year={2021}
-}
-    </code></pre>
-  </div>
-</section>
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link" href="https://arxiv.org/abs/2207.06400" target="_blank">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/HongwenZhang/PyMAF-X" class="external-link" target="_blank">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <div align="center" class="container">
-      <div class="columns is-centered">
-          <div class="content">
-              The website template is borrowed from <a href="https://nerfies.github.io" target="_blank">nerfies</a>. Thanks to the original authors.
-          </div>
-        </div>
-      </div>
-  </div>
-</footer>
 
 </body>
 </html>
