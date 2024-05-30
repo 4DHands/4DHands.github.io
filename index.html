@@ -1,285 +1,142 @@
-<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="description" content="4DHands: Reconstructing Interactive Hands in 4D with Transformers">
-  <meta name="keywords" content="MANO, Hand Pose and Shape">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>4DHands: Reconstructing Interactive Hands in 4D with Transformers</title>
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-</head>
-<body>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>4DHands</title>
+<link href="./js/style.css" rel="stylesheet">
+<script type="text/javascript" src="./js/jquery.mlens-1.0.min.js"></script>
+<script type="text/javascript" src="./js/jquery.js"></script>
 
 
 <style>
-* {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
-.mySlides {display: none;}
-img {vertical-align: middle;}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
+  p.serif{
+    font-family:"Times New Roman", Times, serif;
+  }
+  p.sansserif{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .text-center {
+    text-align: center;
 }
 </style>
+  
+</head>
+
+<body>
+<div class="content">
+  <h1><strong>4DHands: Reconstructing Interactive Hands in 4D with Transformers</strong></h1>
+  <p id="authors">Anonymous Submission<br>
+ </p>
 
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">4DHands: Reconstructing Interactive Hands in 4D with Transformers</h1>
-          <!-- <div class="is-size-3 publication-authors">
-                <span class="author-block">PyMAF-X: the eXpressive version of PyMAF</span>
-          </div> -->
-
-          <!--<div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://hongwenzhang.github.io" target="_blank">Hongwen Zhang</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://github.com/tinatiansjz" target="_blank">Yating Tian</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://zhangyux15.github.io" target="_blank">Yuxiang Zhang</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://github.com/Dw1010" target="_blank">Mengcheng Li</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://anl13.github.io" target="_blank">Liang An</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="http://www.cbsr.ia.ac.cn/users/znsun" target="_blank">Zhenan Sun</a><sup>3</sup>,</span>
-            <span class="author-block">
-              <a href="https://www.liuyebin.com" target="_blank">Yebin Liu</a><sup>1</sup></span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Tsinghua University</span>
-            <span class="author-block"><sup>2</sup>Nanjing University</span>
-            <span class="author-block"><sup>3</sup>Institute of Automation, CAS</span>            
-          </div>
-
-          <div class="is-size-2 publication">
-                <span class="author-block">TPAMI 2023</span>
-          </div>-->
-
-
-
-          <!-- <div class="is-size-3 publication-authors">
-                <span class="author-block">An eXpressive version of <a href="https://hongwenzhang.github.io/pymaf" target="_blank">PyMAF</a></span>
-          </div> -->
-
-        </div>
-      </div>
+  <div class="row">
+    <div class="col-full">
+      <video  width="100%" loop controls>
+        <source src="files/multi_view_crop.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
-</section>
+  
+  <h3 style="text-align:center"><em>4DHands can robustly recover interactive hand meshes and their relative movement from monocular inputs.</em></h3>
+</div>
 
-
-<section class="section">
-
-  <!--/ Abstract. -->
-  <p></p>
-  <!-- Paper video. -->
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-two-thirds">
-      <h2 class="title is-2">Videos</h2>
-
-          <!-- <div>
-            <video width=80% src="files/pymaf_ballet_compressed.mp4" type="video/mp4" autoplay muted loop/>
-          </div> -->
-          <div class="content has-text-centered">
-            <video
-                  id="replay-video11"
-                  controls
-                  muted
-                  width="80%">
-              <source src="files/multi_view_crop.mp4"
-                      type="video/mp4">
-            </video>
-
-          </div>
-
-          <div class="content has-text-centered">
-            <video 
-                  id="replay-video2"
-                  controls
-                  muted
-                  width="80%">
-              <source src="files/clip1.mp4"
-                      type="video/mp4">
-            </video>
-            
-          </div>
-
-          <div class="content has-text-centered">
-            <video
-                  id="replay-video3"
-                  controls
-                  muted
-                  width="80%">
-              <source src="files/clip2.mp4"
-                      type="video/mp4">
-            </video>
-
-          </div>
-
-          <div class="content has-text-centered">
-            <video
-                  id="replay-video4"
-                  controls
-                  muted
-                  width="80%">
-              <source src="files/clip3.mp4"
-                      type="video/mp4">
-            </video>
-
-          </div>
-
-          <div class="content has-text-centered">
-            <video
-                  id="replay-video5"
-                  controls
-                  muted
-                  width="80%">
-              <source src="files/clip4.mp4"
-                      type="video/mp4">
-            </video>
-
-          </div>
-
-        <!-- <h3 align="center" style="margin-top:40px;"  class="title is-4">Ours vs. SPIN vs. VIBE </h3>
-          <div>
-            <video width=90% src="https://hongwenzhang.github.io/pymaf/files/fencing.mp4" type="video/mp4" muted loop/>
-          </div> -->
-      
-      <!-- <div class="publication-video">
-        <iframe src="https://www.you"
-                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </div> -->
-
-
+<div class="content">
+  <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif">Results - Monocular Video Input</p>
+  
+  <div class="row">
+    <div class="col-full">
+      <video  width="100%" loop controls>
+        <source src="files/clip1.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
-
-
-<section class="section">
-
-  <!--/ Abstract. -->
-  <p></p>
-  <!-- Paper video. -->
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-two-thirds">
-      <h2 class="title is-2">Comparison With SOTA</h2>
-
-          <!-- <div>
-            <video width=80% src="files/pymaf_ballet_compressed.mp4" type="video/mp4" autoplay muted loop/>
-          </div> -->
-          <div class="content has-text-centered">
-            <img src="files/img/res_1.jpg"  style="display: block; margin: auto;"/>
-          </div>
-          <div class="content has-text-centered">
-            <img src="files/img/res_2.jpg"  style="display: block; margin: auto;"/>
-          </div>
-          <div class="content has-text-centered">
-            <img src="files/img/res_3.jpg"  style="display: block; margin: auto;"/>
-          </div>
+  <div class="row">
+    <div class="col-full">
+      <video  width="100%" loop controls>
+        <source src="files/clip2.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
-
-  <!--/ Paper video. -->
-</section>
-<section class="section">
-
-  <!--/ Abstract. -->
-  <p></p>
-  <!-- Paper video. -->
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-two-thirds">
-      <h2 class="title is-2">Realistic Views</h2>
-
-
-          <div class="content has-text-centered">
-            <img src="files/img/multi_1.jpg" style="display: block; margin: auto;"/>
-          </div>
-          <div class="content has-text-centered">
-            <img src="files/img/multi_2.jpg" style="display: block; margin: auto;"/>
-          </div>
-          <div class="content has-text-centered">
-            <img src="files/img/multi_3.jpg" style="display: block; margin: auto;"/>
-          </div>
+  <div class="row">
+    <div class="col-full">
+      <video  width="100%" loop controls>
+        <source src="files/clip3.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
+  <div class="row">
+    <div class="col-full">
+      <video  width="100%" loop controls>
+        <source src="files/clip4.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
 
-  <!--/ Paper video. -->
-</section>
+<div class="content">
+  <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif">Results - Single Image Input</p>
+  <div class="row">
+    <div class="col-full">
+      <img class="summary-img" src="files/img/res_1.jpg" style="width:100%;">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-full">
+      <img class="summary-img" src="files/img/res_2.jpg" style="width:100%;">
+    </div>
+  </div>  
+  <div class="row">
+    <div class="col-full">
+      <img class="summary-img" src="files/img/res_3.jpg" style="width:100%;">
+    </div>
+  </div>
+</div>
+
+
+<div class="content">
+  <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif">Results - Complex Interactions</p>
+  <div class="row">
+    <div class="col-full">
+      <img class="summary-img" src="files/img/multi_1.jpg" style="width:100%;">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-full">
+      <img class="summary-img" src="files/img/multi_2.jpg" style="width:100%;">
+    </div>
+  </div>  
+  <div class="row">
+    <div class="col-full">
+      <img class="summary-img" src="files/img/multi_3.jpg" style="width:100%;">
+    </div>
+  </div>
+</div>
 
 
 </body>
+
+<script>
+var videos = document.getElementsByClassName("clickplay");
+for (var i = 0; i < videos.length; i++) {
+  videos[i].addEventListener("click", function() {
+    this.play();
+  });
+  videos[i].addEventListener("ended", function() {
+    this.pause();
+    this.currentTime = 0;
+  });
+}
+
+document.querySelectorAll('.info-container').forEach(function(container) {
+  container.addEventListener('mouseover', function() {
+    var infoText = container.querySelector('.info-text');
+    infoText.style.display = 'block';
+  });
+
+  container.addEventListener('mouseout', function() {
+    var infoText = container.querySelector('.info-text');
+    infoText.style.display = 'none';
+  });
+});
+</script>
+
 </html>
